@@ -10,7 +10,7 @@ target_sources( IMGUI
                     ${IMGUI_DIR}/imgui.cpp
 
                 PRIVATE
-                    ${IMGUI_DIR}/backends/imgui_impl_opengl3.cpp
+                    ${IMGUI_DIR}/backends/imgui_impl_vulkan.cpp
                     ${IMGUI_DIR}/backends/imgui_impl_glfw.cpp
                 )
 
@@ -19,5 +19,5 @@ target_include_directories( IMGUI
                             PUBLIC ${IMGUI_DIR}/backends
                             )
 
-target_link_libraries(IMGUI glad)
+target_link_libraries(IMGUI Vulkan::Vulkan)
 target_link_libraries(IMGUI glfw ${GLFW_LIBRARIES})
